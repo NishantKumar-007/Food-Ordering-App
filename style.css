@@ -1,0 +1,44 @@
+h1 {
+  color: blue;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+.logo {
+  width: 100px;
+}
+.nav-items > ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding-right: 60px;
+}
+.nav-items > ul > li {
+  margin: 20px;
+  font-size: 22px;
+}
+.search-bar-container {
+  padding: 10px;
+}
+.card:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}
+.card-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 250px;
+  height: 320px;
+  padding: 2px;
+  margin: 8px;
+}
+.card > img {
+  width: 100%;
+}
