@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
@@ -15,11 +16,11 @@ const Body = () => {
       );
       const data = await res.json();
       setResList(
-        data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setCopyList(
-        data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     }
@@ -62,7 +63,9 @@ const Body = () => {
       <div className="card-container">
         {resList.map((obj) => {
           return (
-            <RestaurantCard key={obj.info.id} resData={obj}></RestaurantCard>
+            <Link key={obj.info.id} to={"/menu/" + obj.info.id}>
+              <RestaurantCard resData={obj}></RestaurantCard>
+            </Link>
           );
         })}
       </div>

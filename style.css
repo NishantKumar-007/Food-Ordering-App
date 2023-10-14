@@ -34,10 +34,10 @@ h1 {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .card {
-  width: calc(25% - 20px); /* 4 cards in a row, with margin between them */
+  width: 20vw; /* 4 cards in a row, with margin between them */
   margin: 10px;
   padding: 20px;
   border: 1px solid #ccc;
