@@ -15,12 +15,13 @@ const Body = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.132948980432786&lng=77.57781766355038&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const data = await res.json();
+      console.log(data);
       setResList(
-        data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setCopyList(
-        data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     }
