@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
   } = props.resData.info;
   const cuisine = cuisines.join(", ");
   return (
-    <div className="card">
+    <div className="card-details">
       <img src={IMG_URL + cloudinaryImageId}></img>
       <h3>{name}</h3>
       <h4>{cuisine}</h4>
