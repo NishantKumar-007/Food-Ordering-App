@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
+import useStatus from "../utils/useStatus";
 
 //Body Component
 const Body = () => {
@@ -17,16 +18,22 @@ const Body = () => {
       const data = await res.json();
       console.log(data);
       setResList(
-        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setCopyList(
-        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     }
     getResData();
   }, []);
+
+  const status = useStatus();
+
+  if (status === false)
+    return <h1>You are Offline. Check your internet connection</h1>;
+
   if (resList.length === 0) {
     return <Shimmer></Shimmer>;
   }
