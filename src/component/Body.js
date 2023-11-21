@@ -39,9 +39,9 @@ const Body = () => {
   }
   return (
     <div>
-      <div className="btn">
+      <div className="justify-between flex mx-14 my-8">
         <button
-          className="filter-btn"
+          className="filter-btn bg-slate-700  text-white rounded-md p-3 font-montserrat font-semibold"
           onClick={() => {
             const filteredList = resList.filter((obj) => {
               return obj.info.avgRating > 4;
@@ -52,23 +52,31 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
-        <input id="search" type="search" name="search"></input>
-        <button
-          id="search-button"
-          onClick={() => {
-            const val = document.getElementById("search").value;
-            document.getElementById("search").value = "";
-            const searchList = copyList.filter((res) => {
-              return res.info.name.toLowerCase().includes(val.toLowerCase());
-            });
-            setResList(searchList);
-          }}
-        >
-          Search
-        </button>
+        <div className="self-center">
+          <input
+            className="border-2 border-gray-300 mr-4 p-3 rounded-md"
+            id="search"
+            type="search"
+            name="search"
+          ></input>
+          <button
+            className="bg-slate-700  text-white rounded-md p-3 font-montserrat font-semibold"
+            id="search-button"
+            onClick={() => {
+              const val = document.getElementById("search").value;
+              document.getElementById("search").value = "";
+              const searchList = copyList.filter((res) => {
+                return res.info.name.toLowerCase().includes(val.toLowerCase());
+              });
+              setResList(searchList);
+            }}
+          >
+            Search
+          </button>
+        </div>
       </div>
       <div></div>
-      <div className="card-container">
+      <div className="card-container flex flex-wrap justify-evenly shadow-md">
         {resList.map((obj) => {
           return (
             <Link
