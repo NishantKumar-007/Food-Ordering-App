@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { promotedRestaurant } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
 import useStatus from "../utils/useStatus";
@@ -10,6 +10,8 @@ const Body = () => {
   const [resList, setResList] = useState([]);
 
   const [copyList, setCopyList] = useState([]);
+
+  const PromotedRestaurantComponent = promotedRestaurant(RestaurantCard);
   useEffect(() => {
     async function getResData() {
       const res = await fetch(
@@ -78,13 +80,21 @@ const Body = () => {
       <div></div>
       <div className="card-container flex flex-wrap justify-evenly shadow-md">
         {resList.map((obj) => {
+          console.log(obj);
           return (
             <Link
               className="card"
               key={obj.info.id}
               to={"/menu/" + obj.info.id}
             >
-              <RestaurantCard resData={obj}></RestaurantCard>
+              {obj?.info?.aggregatedDiscountInfoV3?.header === undefined ? (
+                <RestaurantCard resData={obj} offers={false}></RestaurantCard>
+              ) : (
+                <PromotedRestaurantComponent
+                  resData={obj}
+                  offers={true}
+                ></PromotedRestaurantComponent>
+              )}
             </Link>
           );
         })}
