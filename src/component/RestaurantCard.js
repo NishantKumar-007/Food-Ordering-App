@@ -1,7 +1,7 @@
 import { IMG_URL } from "../utils/url";
 //Card Component
 const RestaurantCard = (props) => {
-  console.log(props.offers);
+  // console.log(props.offers);
   const {
     name,
     cuisines,
@@ -29,8 +29,8 @@ const RestaurantCard = (props) => {
 
 export const promotedRestaurant = (RestaurantCard) => {
   return (props) => {
-    console.log(props);
     const { aggregatedDiscountInfoV3 } = props.resData.info;
+    console.log(aggregatedDiscountInfoV3);
     return (
       <div className="bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 w-72 mb-10 text-white font-montserrat transition-all duration-100 hover:scale-95 hover:shadow-md hover:shadow-ochreYellow border-opacity-0">
         <label className="absolute p-2 bg-black text-white rounded-lg shadow-lg  font-montserrat opacity-75 z-10">

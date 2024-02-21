@@ -20,11 +20,11 @@ const Body = () => {
       const data = await res.json();
       console.log(data);
       setResList(
-        data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setCopyList(
-        data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     }
