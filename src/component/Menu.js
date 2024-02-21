@@ -16,7 +16,7 @@ const Menu = () => {
   // console.log(menuinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards);
 
   const categories =
-    menuinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    menuinfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (cat) => {
         return (
           cat?.card?.card?.["@type"] ===
